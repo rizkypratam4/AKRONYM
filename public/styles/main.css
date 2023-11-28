@@ -1,0 +1,163 @@
+:root {
+    --text-color: rgb(203 213 225);
+    --form-color: rgb(48, 53, 64);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kdam Thmor Pro", sans-serif;
+}
+
+body {
+    background-color: #1a1a2e;
+}
+
+.navbar {
+    background-color: #1a1a2e;
+}
+
+.navbar .navbar-nav li a {
+    font-size: 1.1rem;
+}
+
+.nav-item .nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 550;
+}
+
+.carousel-inner {
+    height: 350px;
+    border-radius: 20px;
+}
+
+.carousel-item img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.carousel-indicators {
+    position: static;
+    margin-bottom: 0;
+}
+
+/* start Styling halaman profile */
+.profile-content label,
+.profile-content input,
+.profile-content textarea {
+    color: var(--text-color);
+}
+
+.profile-content .profile-logo h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.profile-content .profile-logo p {
+    color: var(--text-color);
+}
+
+.profile-content .profile-logo .profile-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 140px; /* Set a fixed width */
+    height: 140px; /* Set a fixed height */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.profile-content .profile-logo .profile-img-container img {
+    width: 80%; /* Adjust the width as needed */
+    height: 80%; /* Adjust the height as needed */
+    object-fit: contain;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid white; /* Add a white border */
+}
+
+.profile-content .profile-logo .profile-img-container img:hover {
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.profile-content .profile-logo .profile-img-container i {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
+    z-index: 2;
+}
+
+.profile-content .profile-logo .profile-img-container img:hover + i,
+.profile-content .profile-logo .profile-img-container i:hover {
+    display: block;
+}
+
+/* Add this rule to handle transparent backgrounds for the image */
+.profile-content .profile-logo .profile-img-container img {
+    background-color: transparent;
+}
+
+.profile-content .profile-logo .form-control {
+    background-color: #303540;
+    color: white;
+}
+.profile-content .card {
+    background-color: #16213e;
+}
+.profile-content .card .card-body a {
+    color: var(--text-color);
+}
+
+.profile-content .info-akun {
+    position: relative;
+}
+
+.profile-content .edit-button {
+    color: var(--text-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.profile-content .edit-button a {
+    text-decoration: none;
+}
+
+.profile-content .nav-tabs .nav-link {
+    border: none;
+}
+
+.profile-content .team-title {
+    color: var(--text-color);
+}
+
+.profile-content .form-control {
+    background-color: var(--form-color);
+    border: none;
+    color: var(--text-color);
+}
+
+.profile-content .form-control::-webkit-input-placeholder {
+    color: #5b647d;
+}
+
+.profile-content .card-header-tabs .nav-link:hover {
+    border-bottom: none;
+}
+
+.profile-content .nav-underline .nav-link {
+    border-bottom: none;
+}
+
+.profile-content .card-header-tabs .nav-link.active {
+    border-bottom: 3px solid #dc3545;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+/* End styling halaman profile */
