@@ -70,10 +70,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
 // Route Halaman Profile
-Route::get('/profile/akun', [AkunController::class, 'index'])->middleware(['auth']);
-
-Route::get('/profile/edit', [ProfileController::class, 'show_edit'] )->middleware(['auth']);
-Route::post('/profile/edit', [ProfileController::class, 'editProfileOrLogo'] );
+Route::get('/profile/akun', [AkunController::class, 'index']);
+Route::post('/profile/akun', [AkunController::class, 'editAkunOrLogo']);
 
 
 // Route Halaman room

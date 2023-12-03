@@ -32,6 +32,16 @@ class DatabaseSeeder extends Seeder
 
         Artikel::factory(10)->create();
 
+        // Artikel::create([
+        //     'title' => 'RRQ JUARA MPL SEASON 4',
+        //     'game_id' => 1,
+        //     'slug' => 'champion-mpl-season-4',
+        //     'excerpt' => 'rrq juara 1 menang melawan onic',
+        //     'body' => 'membawa Anda ke dalam pertempuran epik dan ketegangan yang mendalam. Ini adalah kesempatan bagi 
+        //             para pemain berani dan pemberani untuk bersaing dalam arena yang memukau',
+        //     'published_at' => '2023-11-30'
+        // ]);
+
         Turnamen::create([
             'tournament_name' => 'FRITTO E-SPORT MOBILE LEGENDS TOURNAMENT',
             'entry_fee' => '100000',

@@ -160,4 +160,31 @@ body {
     border-radius: 5px;
     color: var(--text-color);
 }
+
+.profile-content .list-provinsi .card,
+.profile-content .list-kota .card {
+    background-color: #303540;
+    position: absolute;
+    width: 47%;
+}
+
+.profile-content .list-provinsi ul,
+.profile-content .list-kota ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-content .list-provinsi li,
+.profile-content .list-kota li {
+    margin-bottom: 10px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.profile-content .list-provinsi p,
+.profile-content .list-kota p {
+    color: var(--text-color);
+}
+
 /* End styling halaman profile */

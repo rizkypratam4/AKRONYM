@@ -3,7 +3,8 @@
 
 @section('container')
 
-    <div class="row">
+ <div class="row">
+
         <div class="d-flex justify-content-between">
             <h4 class="text-white hidden">Berdasarkan Topik</h4>
             <h4></h4>
@@ -24,10 +25,11 @@
     </div>
 
     <div class="row hidden">
+        
         @foreach ($games as $game)
         <div class="col-md-4">
             <div class="card text-bg-dark mt-4 card-clickable justify-content-between rounded-5"
-             data-id="{{ $game->slug }}" style="cursor: pointer;">
+             data-id="{{ $game->slug }}" style="cursor: pointer; background-color: #1a1a2e;">
                 <img src="https://source.unsplash.com/1200x400/?gaming" class="img-fluid opacity-50" 
                     alt="banner-kategori">
                 <div class="card-img-overlay d-flex align-items-end">
@@ -48,7 +50,7 @@
     <div id="searchResult">
         @if ($artikels->count())
             <div class="card mt-4 card-clickable card-hero" data-id="{{ $artikels[0]->slug }}"
-                style="cursor: pointer; background-color: #222831; border:none">
+                style="cursor: pointer; background-color: #1a1a2e; border:none">
                 <img src="https://source.unsplash.com/1200x400/?esport" class="card-img-top" alt="hero-artikel">
                 <div class="card-body p-0 mt-2 text-white">
                     <h3 class="card-title">{{ $artikels[0]->title }}</h3>
@@ -67,8 +69,8 @@
     <div class="row mt-4">
         @foreach ($artikels->skip(1) as $artikel)
             <div class="col-md-6 mb-3">
-                <div class="card card-clickable card-hero" 
-                data-id="{{ $artikel->slug }}" style="cursor: pointer; background-color: #222831; border:none">
+                <div class="card card-clickable card-hero" data-id="{{ $artikel->slug }}" 
+                    style="cursor: pointer; background-color: #1a1a2e; border:none">
                     <div class="card-body p-0 text-white" style="display: flex; align-items: center;">
                         <div style="flex: 1;">
                             <img src="https://source.unsplash.com/500x400/?gaming" class="card-img-top"
@@ -83,7 +85,7 @@
             </div>
         @endforeach
     </div>
-
+    
     {{-- "Selengkapnya" text for each article --}}
     <div class="mt-2">
         <a href="{{ url('/artikel/') }}" class="text-center fw-bold text-white">Selengkapnya</a>

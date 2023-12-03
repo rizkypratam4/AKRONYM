@@ -18,21 +18,12 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @var array<int, string>
      */
-    // protected $fillable = [
-    //     'team_name',
-    //     'username',
-    //     'email',
-    //     'password',
-    //     'logo_team',
-    //     'phone_number',
-    //     'city',
-    //     'province',
-    //     'regencies',
-    //     'profil_id',
-    //     'bio'
-    // ];
-
     protected $guarded = ['id'];
+
+    // public function save(array $options = [])
+    // {
+    //     parent::save($options);
+    // }
 
     
 

@@ -82,3 +82,111 @@ function loadContent(tabId) {
     var content = "<p>This content is loaded dynamically.</p>";
     document.querySelector(tabId).innerHTML = content;
 }
+
+const searchProvinsi = () => {
+    const input = document.getElementById("provinsi");
+    const listProvinsi = document.getElementById("listProvinsi");
+    const notFoundMessage = document.getElementById("notFoundMessage");
+
+    input.addEventListener("input", function () {
+        const searchTerm = input.value.toLowerCase();
+        const listItems = listProvinsi.querySelectorAll("li");
+
+        let found = false;
+
+        listItems.forEach((item) => {
+            const itemName = item.textContent;
+
+            if (itemName.toLowerCase().includes(searchTerm)) {
+                item.style.display = "block";
+                found = true;
+            } else {
+                item.style.display = "none";
+            }
+
+            item.addEventListener("click", function () {
+                input.value = itemName;
+                hideListAndMessage();
+            });
+        });
+
+        if (found) {
+            listProvinsi.classList.remove("d-none");
+            notFoundMessage.classList.add("d-none");
+        } else {
+            notFoundMessage.classList.remove("d-none");
+        }
+
+        if (searchTerm === "") {
+            notFoundMessage.classList.remove("d-none");
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        const isClickInsideList = listProvinsi.contains(event.target);
+        const isClickInsideInput = input.contains(event.target);
+
+        if (!isClickInsideList && !isClickInsideInput) {
+            hideListAndMessage();
+        }
+    });
+
+    function hideListAndMessage() {
+        listProvinsi.classList.add("d-none");
+        notFoundMessage.classList.add("d-none");
+    }
+};
+
+const searchKota = () => {
+    const input = document.getElementById("kota");
+    const listKota = document.getElementById("listKota");
+    const notFoundMessage = document.getElementById("notFoundMessage");
+
+    input.addEventListener("input", function () {
+        const searchTerm = input.value.toLowerCase();
+        const listItems = listKota.querySelectorAll("li");
+
+        let found = false;
+
+        listItems.forEach((item) => {
+            const itemName = item.textContent;
+
+            if (itemName.toLowerCase().includes(searchTerm)) {
+                item.style.display = "block";
+                found = true;
+            } else {
+                item.style.display = "none";
+            }
+
+            item.addEventListener("click", function () {
+                input.value = itemName;
+                hideListAndMessage();
+            });
+        });
+
+        if (found) {
+            listKota.classList.remove("d-none");
+            notFoundMessage.classList.add("d-none");
+        } else {
+            notFoundMessage.classList.remove("d-none");
+        }
+
+        if (searchTerm === "") {
+            notFoundMessage.classList.remove("d-none");
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        const isClickInsideList = listKota.contains(event.target);
+        const isClickInsideInput = input.contains(event.target);
+
+        if (!isClickInsideList && !isClickInsideInput) {
+            hideListAndMessage();
+        }
+    });
+
+    function hideListAndMessage() {
+        listKota.classList.add("d-none");
+        notFoundMessage.classList.add("d-none");
+    }
+};

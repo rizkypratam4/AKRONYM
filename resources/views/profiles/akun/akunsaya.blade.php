@@ -7,7 +7,7 @@
     <div class="row">
 
         <div class="profile-logo">
-            <form action="/profile" method="POST" enctype="multipart/form-data" id="logoForm">
+            <form action="/profile/akun" method="POST" enctype="multipart/form-data" id="logoForm">
                 @csrf
                 <input type="hidden" name="form_type" value="logo">
                 <label for="logo_team" class="profile-img-container">
@@ -21,8 +21,7 @@
                 </label>
                 <h1 class="text-center mt-2">{{ $user->team_name }}</h1>
                 <p class="text-center">ID: {{ $user->profile_id }}</p>
-                <p class="text-center">{{ $user->bio}}</p>
-                
+                <p class="text-center">{{ $user->bio }}</p>
             </form>
         </div>
 
@@ -90,7 +89,10 @@
                             <i class="bi bi-pencil me-1"></i>Ubah
                           </p>
                         </div>
-                        <form class="row g-3" action="/profile">
+
+                        <form class="row g-3" action="/profile/akun" method="POST">
+                          @csrf
+                          <input type="hidden" name="form_type" value="akun">
                             <div class="col-md-6">
                                 <label for="inputEmail4" class="form-label">Email</label>
                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" 
@@ -99,8 +101,20 @@
                     
                             <div class="col-md-6">
                                 <label for="kota" class="form-label">Kota</label>
-                                <input type="text" readonly class="form-control-plaintext" id="kota" 
-                                value="-">
+                                <input type="text" onkeyup="searchKota()" style="position: relative" readonly 
+                                class="form-control-plaintext" name="city" id="kota" value="-">
+                                <div class="list-kota d-none" id="listKota">
+                                  <div class="card mt-3"> 
+                                      <div class="card-body">
+                                          <ul>
+                                              @foreach ($kota as $k)
+                                                  <li>{{ $k->name }}</li>
+                                              @endforeach
+                                              <p id="notFoundMessage" class="d-none">Kota tidak ditemukan</p>
+                                          </ul>
+                                      </div>
+                                  </div>
+                              </div>
                             </div>
     
                             <div class="col-md-6">
@@ -111,9 +125,25 @@
                   
                             <div class="col-md-6">
                               <label for="provinsi" class="form-label">Provinsi</label>
-                              <input type="text" readonly class="form-control-plaintext" id="provinsi"
-                              value="-">
+                              <input type="text" style="position: relative" onkeyup="searchProvinsi()" 
+                              readonly class="form-control-plaintext" name="province" id="provinsi" value="-">
+                              <div class="list-provinsi d-none" id="listProvinsi">
+                                  <div class="card mt-3">
+                                      <div class="card-body">
+                                          <ul>
+                                              @foreach ($provinsi as $p)
+                                                  <li>{{ $p->name }}</li>
+                                              @endforeach
+                                              <p id="notFoundMessage" class="d-none">Provinsi tidak ditemukan</p>
+                                          </ul>
+
+                                      </div>
+                                      
+                                  </div>
+                                   
+                              </div>
                             </div>
+
                           
                             <div class="col-md-6">
                             

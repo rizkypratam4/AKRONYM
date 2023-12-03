@@ -37,7 +37,7 @@
 
               <div class="form-floating mt-3">
                 <input type="tel" name="phone_number" class="form-control @error('phone_number') is-invalid @enderror" 
-                id="phone_number" placeholder="No.Handphone" value="{{ old('email') }}" required pattern="[0-9]{12,15}">
+                id="phone_number" placeholder="No.Handphone" value="{{ old('phone_number') }}" required pattern="[0-9]{12,15}">
                 <label>No.Handphone</label>
                 @error('phone_number')
                 <div class="invalid-feedback">
